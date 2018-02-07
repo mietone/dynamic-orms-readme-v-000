@@ -49,8 +49,8 @@ class Song
       values << "'#{send(col_name)}'" unless send(col_name).nil?
     end
     values.join(", ")
-                binding.pry
   end
+  binding.pry
 
   def col_names_for_insert
     self.class.column_names.delete_if {|col| col == "id"}.join(", ")
